@@ -9,6 +9,7 @@ const { App } = require('@slack/bolt')
 // Commands
 console.log("RushBot is starting...")
 const askCommand = require('./commands/ask')
+const mydayCommand = require('./commands/myday')
 
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
@@ -19,6 +20,7 @@ const app = new App({
 
 // Register commands
 askCommand(app)
+mydayCommand(app)
 
 app.start().then(() => {
   console.log('⚡ RushBot is running in socket mode!')

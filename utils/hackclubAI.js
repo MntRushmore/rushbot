@@ -1,7 +1,5 @@
 
 
-const fetch = require('node-fetch')
-
 module.exports = async function askAI(query) {
   const res = await fetch('https://ai.hackclub.com/chat/completions', {
     method: 'POST',
