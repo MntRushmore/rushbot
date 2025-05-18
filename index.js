@@ -1,8 +1,13 @@
 // index.js
 require('dotenv').config()
+// Debug environment variables
+console.log("DEBUG - SLACK_BOT_TOKEN:", process.env.SLACK_BOT_TOKEN ? "[OK]" : "Missing")
+console.log("DEBUG - SLACK_APP_TOKEN:", process.env.SLACK_APP_TOKEN ? "[OK]" : "Missing")
+console.log("DEBUG - SLACK_SIGNING_SECRET:", process.env.SLACK_SIGNING_SECRET ? "[OK]" : "Missing")
 const { App } = require('@slack/bolt')
 
 // Commands
+console.log("RushBot is starting...")
 const askCommand = require('./commands/ask')
 
 const app = new App({

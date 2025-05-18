@@ -9,6 +9,7 @@ module.exports = (app) => {
       const response = await askAI(question)
       await say(`🤖 ${response}`)
     } catch (err) {
+      console.error('🔥 AI error:', err)
       await say('⚠️ Something went wrong with AI!')
     }
   })
